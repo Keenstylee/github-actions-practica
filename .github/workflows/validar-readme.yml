@@ -1,0 +1,19 @@
+name: Validar archivos
+on:
+  workflow_dispatch:
+jobs:
+  validar:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Descargar código
+        uses: actions/checkout@v4
+      - name: Listar archivos
+        run: ls -la
+      - name: Verificar que exista README.md
+        run: |
+          if [ -f README.md ]; then
+            echo "README.md existe"
+          else
+            echo "README.md NO existe"
+            exit 1
+          fi
