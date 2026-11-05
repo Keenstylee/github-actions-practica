@@ -1,0 +1,12 @@
+name: Hola Actions
+on:
+  workflow_dispatch:
+jobs:
+  saludo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Mostrar datos del estudiante
+        run: |
+          echo "Estudiante: Keenscy Sanchez"
+          echo "Fecha: $(date)"
+          echo "Sistema operativo: $(uname -a)"
